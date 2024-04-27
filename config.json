@@ -2,7 +2,7 @@
     "data_dir": "data/fine-tuning",
     "train_filename": "squad20/dev-v2.0.json",
     "use_gpu": true,
-    "n_epochs": 20,
+    "n_epochs": 10,
     "save_dir": "my_model",
     "learning_rate": 0.001,
     "batch_size": 32,

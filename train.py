@@ -1,10 +1,15 @@
 import json
+import torch
 from haystack.nodes import FARMReader
 from haystack.utils import fetch_archive_from_http
 from haystack.schema import Document
 import logging
 
-import torch
+logging.basicConfig(
+    format="%(levelname)s - %(name)s -  %(message)s", level=logging.WARNING)
+logging.getLogger("haystack").setLevel(logging.ERROR)
+
+
 
 
 # Load hyperparameters from config file
@@ -38,9 +43,11 @@ reader = FARMReader(
     model_name_or_path="distilbert-base-uncased-distilled-squad", use_gpu=use_gpu)
 
 
+
+
 # Fine-tune the model on your dataset
 reader.train(data_dir=data_dir, train_filename=train_filename,
-             n_epochs=n_epochs, use_gpu=use_gpu)
+             n_epochs=n_epochs, use_gpu=use_gpu, save_dir=save_dir)
 
 
 # Initialize a new FARMReader with the fine-tuned model

@@ -30,7 +30,7 @@ def chatbot(question):
     result = new_reader.predict(query=question, documents=documents)
 
     # Check if the predicted answer is relevant to the question
-    if result['answers'][0].score > 0.9:
+    if result['answers'][0].score > 0.3:
         return result['answers'][0].answer
     else:
         return "Sorry, I don't know the answer to that question."
