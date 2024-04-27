@@ -1,5 +1,2 @@
-
-pip install torch transformers
-pip install farm-haystack
-pip install farm-haystack[inference]
+pip install farm-haystack[all]
 
