@@ -51,7 +51,7 @@ reader.train(data_dir=data_dir, train_filename=train_filename,
 
 
 # Initialize a new FARMReader with the fine-tuned model
-new_reader = FARMReader(model_name_or_path=save_dir)
+new_reader = FARMReader(model_name_or_path="my_model")
 
 
 print("Completed")
